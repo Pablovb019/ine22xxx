@@ -8,7 +8,7 @@
     @if ($oProduct->discountStart_at <= date('Y-m-d H:i:s') && $oProduct->discountEnd_at >= date('Y-m-d H:i:s'))
     <div class="col-md-3 mb-3">
       <div class="card">
-        <a href="#">
+        <a href="product/{{ $oProduct->id }}">
           <img src="{{ asset($oProduct->imgUrl) }}" class="w-100" alt="ProductImage">
           <div class="card-body">
             <h5>{{ $oProduct->name }}</h5>
@@ -33,7 +33,7 @@
     @if ($oProduct->HasDiscount())
     <div class="col-md-3 mb-3">
       <div class="card">
-        <a href="#">
+        <a href="product/#id#">
           <img src="{{ asset($oProduct->imgUrl) }}" class="w-100" alt="ProductImage">
           <div class="card-body">
             <h5>{{ $oProduct->name }}</h5>
