@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm bg-primary bg-opacity-50">
-    <a class="navbar-brand ms-4" href="#">
+    <a class="navbar-brand ms-4" href="/">
         <p class="fs-4 fw-bold text-white pt-2">My INE eShop</p>
     </a>
     <form class="d-flex form-inline" role="search">
