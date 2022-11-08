@@ -18,4 +18,12 @@ class ProductController extends Controller
     public function show(Product $product){
         return view('product.show', compact('product'));
     }
+
+    public function addToCart(Product $product, Request $request){
+        if($request->session()->has('cart')){
+            $cart = new \App\Models\Cart($request->session()->get('cart'));
+        } else {
+            $cart = new \App\Models\Cart(null);
+        }
+    }
 }
