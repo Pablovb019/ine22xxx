@@ -40,6 +40,7 @@
             @yield('ofertas')
             @yield('nuevos')
             @yield('productos')
+            @yield('carrito')
         </div>
 
         <div class="container-child content-right">

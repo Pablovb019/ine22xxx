@@ -18,6 +18,8 @@
                     @else
                     <label class="me-3"><b>Precio:</b> {{$product->price}} €
                     @endif
+                    <br>
+                    <a href="{{ route('cart.add', $product->id) }}" class="d-flex align-item-center btn btn-primary me-3 mt-4 float-start" role="button">Añadir al carro<span class="material-symbols-outlined">add_shopping_cart</span></a>
                 </div>                
             </div>
         </div>

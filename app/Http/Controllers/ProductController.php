@@ -25,5 +25,10 @@ class ProductController extends Controller
         } else {
             $cart = new \App\Models\Cart(null);
         }
+
+        $cart->add($product);
+        $request->session()->put('cart', $cart);
+        //dd($cart);
+        return redirect()->route('product.show', $product->id)->with('success', 'El producto ha sido añadido al carro');
     }
 }

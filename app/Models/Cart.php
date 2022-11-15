@@ -17,8 +17,8 @@ class Cart extends Model
     {
         if ($cart) {
             $this->htItem = $cart->htItem;
-            $this->iTotalItems = 0;
-            $this->dTotalPrice = 0;
+            $this->iTotalItems = $cart->iTotalItems;
+            $this->dTotalPrice = $cart->dTotalPrice;
         }
     }
 
@@ -35,8 +35,10 @@ class Cart extends Model
         } else {
             $this->htItem[$product->id]['quantity']++;
         }
-        $this->iTotalItems = $this->htItem[$product->id]['quantity'];
-        $this->dTotalPrice = $this->htItem[$product->id]['quantity'] * $this->htItem[$product->id]['price'];
+        foreach ($this->htItem as $item) {
+            $this->iTotalItems += $item['quantity'];
+            $this->dTotalPrice += $item['price'] * $item['quantity'];
+        }
     }
 
     public function remove(Product $product)

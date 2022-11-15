@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class, 'welcome']) ->name('home');
 Route::get('/product/{product}', [ProductController::class, 'show']) ->name('product.show');
+Route::get('/addToCart/{product}', 'App\Http\Controllers\ProductController@addToCart') ->name('cart.add');
+Route::get('/cart', [CartController::class, 'show']) ->name('cart.show');
+Route::get('/cart/{operation}/{product}', [CartController::class, 'operation']) ->name('cart.operation');
 
 Route::middleware([
     'auth:sanctum',
