@@ -11,7 +11,7 @@
             <a class="nav-link text-white" href="#">Autenticación</a>
         </li>
         <li class="nav-item me-2">
-            <a class="nav-link" href="cart">
+            <a class="nav-link" href="/cart">
                 <span class="material-symbols-outlined text-white">shopping_cart</span>
                 <span class="badge rounded-pill bg-danger">
                     @php

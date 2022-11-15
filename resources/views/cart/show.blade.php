@@ -32,6 +32,7 @@
                 <h6> Cantidad Total : {{ $cart->iTotalItems }} </h6>
                 <h6> Precio Total : {{ $cart->dTotalPrice }}€ </h6>
             </div>
+            
         </div>
     </div>
 </div>
