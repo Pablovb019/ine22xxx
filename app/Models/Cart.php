@@ -62,7 +62,6 @@ class Cart extends Model
             $this->iTotalItems -= $this->htItem[$product->id]['quantity'];
             $this->dTotalPrice -= $this->htItem[$product->id]['quantity'] * $this->htItem[$product->id]['price'];
             unset($this->htItem[$product->id]);
-
         }
     }
 }

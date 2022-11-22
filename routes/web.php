@@ -19,6 +19,9 @@ Route::get('/product/{product}', [ProductController::class, 'show']) ->name('pro
 Route::get('/addToCart/{product}', 'App\Http\Controllers\ProductController@addToCart') ->name('cart.add');
 Route::get('/cart', [CartController::class, 'show']) ->name('cart.show');
 Route::get('/cart/{operation}/{product}', [CartController::class, 'operation']) ->name('cart.operation');
+Route::get('/user/logout', [UserController::class, 'logout']) ->name('user.logout');
+Route::get('/user', [UserController::class, 'edit']) ->name('user.edit');
+Route::patch('/user', [UserController::class, 'update']) ->name('user.update');
 
 Route::middleware([
     'auth:sanctum',
