@@ -31,10 +31,10 @@
                 <h5 class="text-white mb-3">Contacto</h5>
                 <ul class="list-unstyled text-muted">
                     <li><a href="#" style="color:white; text-decoration:none;">Atención al cliente</a></li>
-                    <li><a href="#" style="color:white; text-decoration:none;">Twitter</a></li>
-                    <li><a href="#" style="color:white; text-decoration:none;">Facebook</a></li>
-                    <li><a href="#" style="color:white; text-decoration:none;">Instagram</a></li>
-                    <li><a href="#" style="color:white; text-decoration:none;">Instagram</a></li>
+                    <li><a href="#" style="color:white; text-decoration:none;"><i class="fa-brands fa-twitter"></i>&nbsp;Twitter</a></li>
+                    <li><a href="#" style="color:white; text-decoration:none;"><i class="fa-brands fa-facebook"></i>&nbsp;Facebook</a></li>
+                    <li><a href="#" style="color:white; text-decoration:none;"><i class="fa-brands fa-youtube"></i>&nbsp;YouTube</a></li>
+                    <li><a href="#" style="color:white; text-decoration:none;"><i class="fa-brands fa-instagram"></i>&nbsp;&nbsp;Instagram</a></li>
                 </ul>
             </div>
         </div>

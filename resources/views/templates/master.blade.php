@@ -34,30 +34,31 @@
     @yield('content')
 
     <!-- LAYOUT: CENTER -->
+    @if(Route::currentRouteName() == 'home')
     <div class="container">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-8">
                 <div class="container-fluid content-center">
                     @yield('ofertas')
                     @yield('nuevos')
-                    @yield('productos')
-                    @yield('carrito')
-                    @yield('register')
-                    @yield('login')
-                    @yield('user')
                 </div>
             </div>
-            @if(Route::currentRouteName() == 'home')
-            <div class="col-sm-4">
-                <div class="container-fluid content-right">
+            <div class="col-4 position-relative">
+                <div class="container-fluid content-right position-absolute top-0 start-50">
                     @yield('destacados')
                 </div>
             </div>
-            @endif
         </div>
     </div>
-
-
+    @else
+    <div class="container-fluid container-center">
+        @yield('productos')
+        @yield('carrito')
+        @yield('register')
+        @yield('login')
+        @yield('user')
+    </div>
+    @endif
 
 
     @include('layouts.footer')

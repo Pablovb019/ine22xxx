@@ -1,7 +1,13 @@
+<style>
+    .form-floating{
+        max-width: 400px;
+    }
+</style>
+
 @extends ('templates.master')
 
 @section ('register')
-<div class="content-center">
+<div class="d-flex justify-content-center container-fluid">
     <x-jet-authentication-card>
         <x-slot name="logo">
         </x-slot>

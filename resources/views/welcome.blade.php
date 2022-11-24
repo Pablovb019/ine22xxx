@@ -6,7 +6,7 @@
   <div class="row pt-2">
     @foreach ($aProduct_offering as $oProduct)
     @if ($oProduct->discountStart_at <= date('Y-m-d H:i:s') && $oProduct->discountEnd_at >= date('Y-m-d H:i:s'))
-      <div class="col-md-3 mb-3">
+      <div class="col-md-4 mb-3">
         <div class="card">
           <a href="product/{{ $oProduct->id }}">
             <img src="{{ asset($oProduct->imgUrl) }}" class="w-100" alt="ProductImage">
@@ -30,7 +30,7 @@
   <div class="row pt-2">
     @foreach ($aProduct_new as $oProduct)
     @if (date('Y-m-d', strtotime($oProduct->updated_at)) >= date('Y-m-d') && date('Y-m-d', strtotime($oProduct->updated_at)) <= date('Y-m-d', strtotime(date('Y-m-d') . ' + 1 week' ))) @if ($oProduct->HasDiscount())
-      <div class="col-md-3 mb-3">
+      <div class="col-md-4 mb-3">
         <div class="card">
           <a href="product/{{ $oProduct->id }}">
             <img src="{{ asset($oProduct->imgUrl) }}" class="w-100" alt="ProductImage">
@@ -44,7 +44,7 @@
         </div>
       </div>
       @else
-      <div class="col-md-3 mb-3">
+      <div class="col-md-4 mb-3">
         <div class="card">
           <a href="#">
             <img src="{{ asset($oProduct->imgUrl) }}" class="w-100" alt="ProductImage">
