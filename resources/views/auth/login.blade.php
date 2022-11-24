@@ -9,44 +9,46 @@
         <x-jet-validation-errors class="mb-4" />
 
         @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
+        <div class="mb-4 font-medium text-sm text-green-600">
+            {{ session('status') }}
+        </div>
         @endif
+
+        <h4 class="text-center pb-4">{{ __('auth.Login_form') }}</h4>
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div>
-                <x-jet-label for="email" value="{{ __('auth.Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            <div class="form-floating mb-3">
+                <x-jet-input id="email" class="form-control" name="email" :value="old('email')" placeholder="email" required autofocus />
+                <x-jet-label for="email" class="form-label" value="{{ __('auth.Email') }}" />
             </div>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('auth.Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+
+
+            <div class="form-floating mb-3">
+                <x-jet-input id="password" class="form-control" type="password" name="password" placeholder="password" required autocomplete="current-password" />
+                <x-jet-label for="password" class="form-label" value="{{ __('auth.Password') }}" />
             </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('auth.Remember me') }}</span>
-                </label>
+            <div class="form-check mb-3">
+                <x-jet-checkbox id="remember_me" class="form-check-input" name="remember" />
+                <x-jet-label for="remember_me" class="form-check-label" value="{{ __('auth.Remember me') }}" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="mb-3">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('auth.Forgot your password?') }}
-                    </a>
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                    {{ __('auth.Forgot your password?') }}
+                </a>
                 @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('auth.Log in') }}
-                </x-jet-button>
+            </div>
+            <div class="mb-3">
+                <x-jet-button class="btn btn-primary me-4">{{ __('auth.Log in') }}</x-jet-button>
+                <a class="btn btn-success ml-4 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition btn btn-primary me-4"
+                href="{{ route('register') }}">{{ __('auth.Register') }}</a>
             </div>
         </form>
     </x-jet-authentication-card>
-    <a class="btn btn-primary" href="{{ route('register') }}">{{ __('auth.Register') }}</a>
 </div>
 @endsection

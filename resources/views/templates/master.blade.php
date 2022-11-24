@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,7 +21,7 @@
             background: #aaa;
         }
 
-        .content-right{
+        .content-right {
             max-width: 400px;
         }
     </style>
@@ -31,29 +31,37 @@
 
 <body>
     @include('layouts.header')
-        @yield('content')
+    @yield('content')
 
     <!-- LAYOUT: CENTER -->
-
-    <div class="parent-container d-flex">
-        <div class="container-child content-center">
-            @yield('ofertas')
-            @yield('nuevos')
-            @yield('productos')
-            @yield('carrito')
-            @yield('register')
-            @yield('login')
-            @yield('user')
-        </div>
-
-        <div class="container-child content-right">
-            @yield('destacados')
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="container-fluid content-center">
+                    @yield('ofertas')
+                    @yield('nuevos')
+                    @yield('productos')
+                    @yield('carrito')
+                    @yield('register')
+                    @yield('login')
+                    @yield('user')
+                </div>
+            </div>
+            @if(Route::currentRouteName() == 'home')
+            <div class="col-sm-4">
+                <div class="container-fluid content-right">
+                    @yield('destacados')
+                </div>
+            </div>
+            @endif
         </div>
     </div>
 
 
+
+
     @include('layouts.footer')
-        @yield('content')
+    @yield('content')
 
 
     <!-- Loading Javascripts -->
