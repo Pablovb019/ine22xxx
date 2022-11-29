@@ -51,7 +51,7 @@
         </div>
     </div>
     @else
-    <div class="container-fluid container-center">
+    <div class="container-fluid container-center pt-4 pb-4">
         @yield('productos')
         @yield('carrito')
         @yield('register')
