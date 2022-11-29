@@ -20,7 +20,9 @@
                     @endif
                     <br>
                     <a href="{{ route('cart.add', $product->id) }}" class="d-flex align-item-center btn btn-primary me-3 mt-4 float-start" role="button">Añadir al carro<span class="material-symbols-outlined">add_shopping_cart</span></a>
+                    @if (Auth::check() && Auth::user()->isEditor(Auth::user()))
                     <a href="{{ route('product.edit', $product->id) }}" class="d-flex align-item-center btn btn-success me-3 mt-4 float-start" role="button">Editar</a>
+                    @endif
                 </div>                
             </div>
         </div>

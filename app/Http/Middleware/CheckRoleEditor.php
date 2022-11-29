@@ -19,8 +19,7 @@ class CheckRoleEditor
      */
     public function handle(Request $request, Closure $next)
     {   
-        dd($request->user()->isEditor(Auth::user()));
-        if (!$request->user()->isEditor($request->user()))
+        if (!request()->user() || !$request->user()->isEditor($request->user()))
             return redirect('/')->withErrors( 
                 ['msg' => 'No autenticado o sin permisos de edición.']);
         return $next($request);

@@ -17,10 +17,10 @@
             @if(Auth::check())
             <a class="nav-link text-white" href="{{ route('user.edit') }}">{{ Auth::user()->name }}</a>
         <li class="nav-item">
-            <a href="user/logout"><i class="fa-solid fa-circle-xmark mt-3"></i></a>
+            <a href="/user/logout"><i class="fa-solid fa-circle-xmark mt-3"></i></a>
         </li>
         @else
-        <a class="nav-link text-white" href="login">Autenticación</a>
+        <a class="nav-link text-white" href="/login">Autenticación</a>
         @endif
 
 

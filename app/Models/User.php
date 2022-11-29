@@ -60,11 +60,10 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public static function isEditor(Auth $user)
+    public static function isEditor(User $user)
     {
         $teamAdmin = Team::where('name', '=', 'administradores')->first();
-        $userRole = $user->id->teamRole($teamAdmin);
-        dd($user->id->hasTeamRole($userRole, 'editor'));
-        return $user && $userRole == 'editor';
+        $userRole = $user->teamRole($teamAdmin);
+        return $user && $userRole->key == 'editor';
     }
 }
