@@ -31,4 +31,18 @@ class ProductController extends Controller
         // dd($cart);
         return redirect()->route('product.show', $product->id)->with('success', 'El producto ha sido añadido al carro');
     }
+
+    public function update(Product $product, Request $request){
+        $product->name = $request->name;
+        $product->company_id = $request->company_id;
+        $product->description = $request->description;
+        $product->save();
+
+        return redirect()->route('product.show', $product->id)->with('success', 'El producto ha sido actualizado');
+    }
+
+    public function edit(Product $product){
+        $aCompany = \App\Models\Company::all();
+        return view('product.edit', compact('product', 'aCompany'));
+    }
 }

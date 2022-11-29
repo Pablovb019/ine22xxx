@@ -57,6 +57,7 @@
         @yield('register')
         @yield('login')
         @yield('user')
+        @yield('editar_producto')
     </div>
     @endif
 
